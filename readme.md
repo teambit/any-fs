@@ -2,9 +2,20 @@
 
 anyfs is a composable and extendible file-system and fully compatible with the node `fs` module.
 
-## real life examples and use cases
+## Usage
 
-## remote fs actions
+```js
+var { MemoryFS } = require('@teambit/anyfs');
+const fs = new MemoryFS() 
+fs.writeFile()
+````
+
+```js
+var { Volume } = require('@teambit/anyfs');
+const fs = new Volume() 
+fs.writeFile()
+```
+
 
 ## Adapters
 AnyFS comes with following adapters
