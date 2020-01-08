@@ -1,4 +1,5 @@
 # anyfs
+![npm](https://img.shields.io/npm/l/anyfs.svg?style=flat-square)
 
 anyfs is a composable and extendible file-system and fully compatible with the node `fs` module.
 
