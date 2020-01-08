@@ -3,7 +3,6 @@ import { Dirent, MakeDirectoryOptions, promises, Stats } from 'fs';
 import fs, { PathLike } from 'fs';
 
 export default class FsPromisesAPI implements PromisesAPI {
-
   access(path: PathLike, mode?: number): Promise<void> {
     return fs.promises.access(path, mode);
   }

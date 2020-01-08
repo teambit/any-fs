@@ -1,27 +1,37 @@
 {
-  "name": "anyfs",
+  "name": "@teambit/any-fs",
   "version": "0.0.1",
-  "private": true,
+  "description": "any-fs is a composable and extendible file-system and fully compatible with the node `fs` module.",
+  "repository": "teambit/any-fs",
   "main": "dist/index.js",
   "scripts": {
     "precommit": "lint-staged",
-    "test": "mocha --require ts-node/register/transpile-only --require source-map-support/register --recursive src/**/*.spec.ts src/**/**/*.spec.ts",
     "build": "npm run clean && tsc -d",
     "watch": "tsc -d -w",
     "clean": "rm -rf ./dist",
     "start": "node dist/index.js",
     "prettier": "prettier --write 'src/**/*.{ts,}' --write"
   },
+
   "devDependencies": {
-    "@types/node": "^13.1.0",
+    "@types/node": "13.1.4",
+
     "prettier": "1.19.1",
-    "ts-node": "^8.5.4",
-    "typescript": "^3.7.4"
+    "ts-node": "8.5.4",
+    "typescript": "3.7.4"
   },
-  "author": "Ran Mizrahi <ran@bit.dev>",
-  "license": "ISC",
+  "author": {
+    "name": "Team Bit",
+    "email": "teambit@bit.dev",
+    "url": "https://bit.dev"
+  },
+  "license": "MIT",
   "dependencies": {
-    "memfs": "^3.0.3"
+    "memfs": "3.0.3"
+  },
+  "engines": {
+    "node": ">=6",
+    "npm": ">=3"
   },
   "lint-staged": {
     "*.{ts,js,json,md,gql}": [

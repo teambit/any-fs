@@ -1,18 +1,18 @@
-# anyfs
+# any-fs
 ![npm](https://img.shields.io/npm/l/anyfs.svg?style=flat-square)
 
-anyfs is a composable and extendible file-system and fully compatible with the node `fs` module.
+any-fs is a composable and extendible file-system and fully compatible with the node `fs` module.
 
 ## Usage
 
 ```js
-var { MemoryFS } = require('@teambit/anyfs');
+var { MemoryFS } = require('@teambit/any-fs');
 const fs = new MemoryFS() 
 fs.writeFile()
 ````
 
 ```js
-var { Volume } = require('@teambit/anyfs');
+var { Volume } = require('@teambit/any-fs');
 const fs = new Volume() 
 fs.writeFile()
 ```

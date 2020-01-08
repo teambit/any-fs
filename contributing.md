@@ -1,21 +1,21 @@
 
-# Contributing to anyFS
+# Contributing to any-fs
 
 Contributions are always welcome. Before contributing please read the
 [code of conduct](https://js.foundation/community/code-of-conduct) &
-[search the issue tracker](https://github.com/teambit/anyFS/issues); your issue
+[search the issue tracker](https://github.com/teambit/any-fs/issues); your issue
 may have already been discussed or fixed in `master`. To contribute,
-[fork](https://help.github.com/articles/fork-a-repo/) anyFS, commit your changes,
+[fork](https://help.github.com/articles/fork-a-repo/) any-fs, commit your changes,
 & [send a pull request](https://help.github.com/articles/using-pull-requests/).
 
 ## Feature Requests
 
 Feature requests should be submitted in the
-[issue tracker](https://github.com/teambit/anyFS/issues), with a description of
+[issue tracker](https://github.com/teambit/any-fs/issues), with a description of
 the expected behavior & use case.
 
 Before submitting a request, please search for similar ones in the
-[closed issues](https://github.com/teambit/anyFS/issues?q=is%3Aissue+is%3Aclosed).
+[closed issues](https://github.com/teambit/any-fs/issues?q=is%3Aissue+is%3Aclosed).
 
 
 

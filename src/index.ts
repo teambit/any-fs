@@ -1,2 +1,2 @@
 export * from './volumes';
-export * from './node'
+export * from './node';

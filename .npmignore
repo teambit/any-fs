@@ -1,3 +1,8 @@
-src/docker
-src/paper
-src/runc
+
+src/**
+.gitignore
+.prettierrc
+eslintignore
+eslintrc
+prettierrc
+tsconfig.json
