@@ -1,0 +1,32 @@
+{
+  "name": "anyfs",
+  "version": "0.0.1",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "precommit": "lint-staged",
+    "test": "mocha --require ts-node/register/transpile-only --require source-map-support/register --recursive src/**/*.spec.ts src/**/**/*.spec.ts",
+    "build": "npm run clean && tsc -d",
+    "watch": "tsc -d -w",
+    "clean": "rm -rf ./dist",
+    "start": "node dist/index.js",
+    "prettier": "prettier --write 'src/**/*.{ts,}' --write"
+  },
+  "devDependencies": {
+    "@types/node": "^13.1.0",
+    "prettier": "1.19.1",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.4"
+  },
+  "author": "Ran Mizrahi <ran@bit.dev>",
+  "license": "ISC",
+  "dependencies": {
+    "memfs": "^3.0.3"
+  },
+  "lint-staged": {
+    "*.{ts,js,json,md,gql}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
