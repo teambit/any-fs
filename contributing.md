@@ -3,7 +3,7 @@
 
 Contributions are always welcome. Before contributing please read the
 [code of conduct](https://js.foundation/community/code-of-conduct) &
-[search the issue tracker](https://github.com/lodash/lodash/issues); your issue
+[search the issue tracker](https://github.com/teambit/anyFS/issues); your issue
 may have already been discussed or fixed in `master`. To contribute,
 [fork](https://help.github.com/articles/fork-a-repo/) anyFS, commit your changes,
 & [send a pull request](https://help.github.com/articles/using-pull-requests/).
