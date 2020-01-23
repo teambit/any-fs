@@ -2,7 +2,7 @@ import { PathLike } from 'fs';
 import * as stream from 'stream';
 import * as events from 'events';
 
-export interface FS {
+export interface AnyFS {
   /**
    * Asynchronous rename(2) - Change the name or location of a file or directory.
    * @param oldPath A path to a file. If a URL is provided, it must use the `file:` protocol.

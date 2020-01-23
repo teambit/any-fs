@@ -1,2 +1,2 @@
-export * from './volume';
+export { NodeFS } from './node-fs';
 export * from './promises';

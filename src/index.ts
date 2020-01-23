@@ -1,2 +1,2 @@
+export { AnyFS } from './node';
 export * from './volumes';
-export * from './node';

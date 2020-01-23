@@ -1,6 +1,6 @@
 import {
   Dirent,
-  FS,
+  AnyFS,
   FSWatcher,
   MakeDirectoryOptions,
   PromisesAPI,
@@ -14,10 +14,10 @@ import { PathLike } from 'fs';
 import { Volume } from 'memfs';
 import { Volume as _Volume, TFilePath, TCallback } from 'memfs/lib/volume';
 
-export class MemoryFS implements FS {
+export class MemoryFS implements AnyFS {
   public volume: _Volume = new Volume();
   // @ts-ignore
-  readonly promises = this.volume.promises;
+  readonly promises: PromisesAPI = this.volume.promises;
 
   access(
     path: PathLike,

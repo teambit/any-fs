@@ -1,6 +1,6 @@
 import {
   Dirent,
-  FS,
+  AnyFS,
   FSWatcher,
   MakeDirectoryOptions,
   PromisesAPI,
@@ -13,8 +13,8 @@ import {
 import fs, { PathLike } from 'fs';
 import FsPromisesAPI from './promises';
 
-export class Volume implements FS {
-  constructor(public promises: PromisesAPI = new FsPromisesAPI()) {}
+export class NodeFS implements AnyFS {
+  readonly promises: PromisesAPI = new FsPromisesAPI();
 
   access(
     path: PathLike,
