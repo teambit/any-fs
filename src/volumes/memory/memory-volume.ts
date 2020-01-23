@@ -12,12 +12,12 @@ import {
 } from '../../node';
 import { PathLike } from 'fs';
 import { Volume } from 'memfs';
-import { Volume as _Volume } from 'memfs/lib/volume';
+import { Volume as _Volume, TFilePath, TCallback } from 'memfs/lib/volume';
 
 export class MemoryFS implements FS {
   public volume: _Volume = new Volume();
   // @ts-ignore
-  constructor(public promises: PromisesAPI = this.volume.promises) {}
+  readonly promises = this.volume.promises;
 
   access(
     path: PathLike,
@@ -50,11 +50,13 @@ export class MemoryFS implements FS {
       | null,
     callback: (err: NodeJS.ErrnoException | null) => void
   ): void;
+
   appendFile(
     file: PathLike | number,
     data: any,
     callback: (err: NodeJS.ErrnoException | null) => void
   ): void;
+
   appendFile(
     file: PathLike | number,
     data: any,
@@ -63,6 +65,10 @@ export class MemoryFS implements FS {
   ): void {
     // @ts-ignore
     this.volume.appendFile(file, data, options);
+  }
+
+  mkdirpSync(path: TFilePath) {
+    this.volume.mkdirpSync(path);
   }
 
   appendFileSync(
