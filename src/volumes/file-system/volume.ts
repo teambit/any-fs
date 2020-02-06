@@ -16,8 +16,8 @@ import FsPromisesAPI from './promises';
 
 export type PathLike = string;
 
-export class NodeFS implements AnyFS {
-  readonly promises: PromisesAPI = new FsPromisesAPI();
+export class Volume implements AnyFS {
+  readonly promises: PromisesAPI = new FsPromisesAPI()
 
   constructor(
     private workingDir: PathLike
@@ -25,7 +25,7 @@ export class NodeFS implements AnyFS {
 
   getPath(path: PathLike) {
     return join(this.workingDir, path);
-  }    
+  }
 
   access(
     path: PathLike,
@@ -50,7 +50,7 @@ export class NodeFS implements AnyFS {
   }
 
   appendFile(
-    file: PathLike,
+    file: PathLike | number,
     data: any,
     options:
       | { encoding?: string | null; mode?: number | string; flag?: string }
@@ -59,12 +59,12 @@ export class NodeFS implements AnyFS {
     callback: (err: NodeJS.ErrnoException | null) => void
   ): void;
   appendFile(
-    file: PathLike,
+    file: PathLike | number,
     data: any,
     callback: (err: NodeJS.ErrnoException | null) => void
   ): void;
   appendFile(
-    file: PathLike,
+    file: PathLike | number,
     data: any,
     options: WriteFileOptions | ((err: NodeJS.ErrnoException | null) => void),
     callback?: (err: NodeJS.ErrnoException | null) => void
@@ -183,7 +183,7 @@ export class NodeFS implements AnyFS {
   }
 
   existsSync(path: PathLike): boolean {
-    return fs.existsSync(this.getPath(path));
+    return false;
   }
 
   fchmod(
@@ -510,17 +510,17 @@ export class NodeFS implements AnyFS {
   }
 
   readFile(
-    path: PathLike,
+    path: PathLike | number,
     options: { encoding?: null; flag?: string } | undefined | null,
     callback: (err: NodeJS.ErrnoException | null, data: Buffer) => void
   ): void;
   readFile(
-    path: PathLike,
+    path: PathLike | number,
     options: { encoding: string; flag?: string } | string,
     callback: (err: NodeJS.ErrnoException | null, data: string) => void
   ): void;
   readFile(
-    path: PathLike,
+    path: PathLike | number,
     options:
       | { encoding?: string | null; flag?: string }
       | string
@@ -529,11 +529,11 @@ export class NodeFS implements AnyFS {
     callback: (err: NodeJS.ErrnoException | null, data: string | Buffer) => void
   ): void;
   readFile(
-    path: PathLike,
+    path: PathLike | number,
     callback: (err: NodeJS.ErrnoException | null, data: Buffer) => void
   ): void;
   readFile(
-    path: PathLike,
+    path: PathLike | number,
     options:
       | { encoding?: null; flag?: string }
       | undefined
@@ -549,15 +549,15 @@ export class NodeFS implements AnyFS {
   ): void {}
 
   readFileSync(
-    path: PathLike,
+    path: PathLike | number,
     options?: { encoding?: null; flag?: string } | null
   ): Buffer;
   readFileSync(
-    path: PathLike,
+    path: PathLike | number,
     options: { encoding: string; flag?: string } | string
   ): string;
   readFileSync(
-    path: PathLike,
+    path: PathLike | number,
     options?: { encoding?: string | null; flag?: string } | string | null
   ): string | Buffer;
   readFileSync(
@@ -569,7 +569,7 @@ export class NodeFS implements AnyFS {
       | string
       | { encoding?: string | null; flag?: string }
   ): Buffer | string {
-    return fs.readFileSync(this.getPath(path));
+    return fs.readFileSync(path);
   }
 
   readSync(
@@ -730,10 +730,12 @@ export class NodeFS implements AnyFS {
       linkString: string | Buffer
     ) => void
   ): void;
+  
   readlink(
     path: PathLike,
     callback: (err: NodeJS.ErrnoException | null, linkString: string) => void
   ): void;
+
   readlink(
     path: PathLike,
     options:
@@ -913,7 +915,7 @@ export class NodeFS implements AnyFS {
   }
 
   rmdirSync(path: PathLike): void {
-    fs.rmdirSync(this.getPath(path));
+    fs.rmdirSync(path);
   }
 
   stat(
@@ -994,7 +996,7 @@ export class NodeFS implements AnyFS {
   }
 
   unlinkSync(path: PathLike): void {
-    fs.unlinkSync(this.getPath(path));
+    fs.unlinkSync(path);
   }
 
   unwatchFile(
