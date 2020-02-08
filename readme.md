@@ -1,7 +1,15 @@
 # any-fs
+
 ![npm](https://img.shields.io/npm/l/anyfs.svg?style=flat-square)
 
-any-fs is a composable and extendible file-system and fully compatible with the node `fs` module.
+any-fs is a composable and extendible file-system, fully compatible with node's `fs` module.
+
+## Installation
+
+```sh
+npm i @teambit/any-fs
+yarn add @teambit/any-fs
+```
 
 ## Usage
 
@@ -17,17 +25,20 @@ const fs = new Volume()
 fs.writeFile()
 ```
 
-
 ## Adapters
+
 AnyFS comes with following adapters
+
  - Memory - Builtin, access with `MemoryFS`
  - Fs - node fs 
  
 ## Features
+
 - Full compatibility to the Node `fs` module.
 - Supports the node `fs` promises API
 
 ## In-Progress
+
 - Docker volume
 - Kubernetes 
 - SFTP
