@@ -6,11 +6,12 @@
   "main": "dist/index.js",
   "scripts": {
     "precommit": "lint-staged",
-    "build": "npm run clean && tsc -d",
+    "build": "tsc -d",
     "watch": "tsc -d -w",
     "clean": "rm -rf ./dist",
     "start": "node dist/index.js",
-    "prettier": "prettier --write 'src/**/*.{ts,}' --write"
+    "prettier": "prettier --write 'src/**/*.{ts,}' --write",
+    "prepublishOnly": "npm run clean && npm run build"
   },
   "devDependencies": {
     "@types/node": "13.1.4",
