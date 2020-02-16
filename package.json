@@ -1,6 +1,6 @@
 {
   "name": "@teambit/any-fs",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "any-fs is a composable and extendible file-system and fully compatible with the node `fs` module.",
   "repository": "teambit/any-fs",
   "main": "dist/index.js",
